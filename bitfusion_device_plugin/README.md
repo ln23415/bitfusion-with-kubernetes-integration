@@ -5,7 +5,7 @@ Current solutions of GPU virtualization may have some shortcomings:
 
 1.Underutilized GPU compute cycle   
 2.Limited and preset granularity    
-3.Resource bound to local machine    
+3.Resource bound to local machine  
 4.Hard for application scheduling   
 
 Bitfusion helps address the problems by providing remote GPU pool. Bitfusion makes GPUs a first class citizen that can be abstracted, partitioned, automated and shared like compute resource. On the other hand, Kubernetes has become the de facto platform to deploy and manage machine learning workloads.
@@ -16,7 +16,26 @@ However, out of the box Kubernetes does not offer a way to consume Bitfusion's n
 
 To address these problems, this project allows Kubernetes to work with Bitfusion.
 
-
+## Table of Contents
+- [Architecture](#1-architecture)
+- [Prerequisites](#2-prerequisites)
+  - [Quota configuration](#21-quota-configuration)
+  - [Get Baremetal Token for authorization](#22-get-baremetal-token-for-authorization)
+  - [Create a Kubernetes Secret using the Baremetal Token](#23-create-a-kubernetes-secret--using-the-baremetal-token)
+- [Quick Start](3-quick-start)
+  - [Option 1: Using pre-built images (recommended)](#31-option-1-using-pre-built-images-recommended)
+  - [Option 2: Building images from scratch](#32-option-2-building-images-from-scratch)
+  - [Verifying the deployment](#33-verifying-the-deployment)
+- [Using Bitfusion GPU in Kubernetes workload](#4-using-bitfusion-gpu-in-kubernetes-workload)
+  - [Option 1: Submit the workload with "gpu-percent" parameter](#41-option-1-submit-the-workload-with-gpu-percent-parameter)
+  - [Option 2: Submit the workload with "gpu-memory" parameter](#42-option-2-submit-the-workload-with-gpu-memory-parameter)
+  - [The configuration of "auto-management/bitfusion parameter"](#43-the-configuration-of-auto-managementbitfusion-parameter)
+  - [The configuration of "bitfusion-client/filter parameter"](#44-the-configuration-of-bitfusion-clientfilter-parameter)
+- [Resource Quota (optional)](#example-readmes)
+  - [Enforce Quota](#51-enforce-quota)
+  - [Validate the quota using the following two methods](#52-validate-the-quota-using-the-following-two-methods)
+- [Troubleshooting](#6-troubleshooting)
+- [Note](#7-note)
 
 ## 1. Architecture
 
