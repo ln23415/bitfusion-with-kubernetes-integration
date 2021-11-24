@@ -1,0 +1,19 @@
+
+imagename: bitfusion-client:0.8
+data:
+  - OSVersion: ubuntu18
+    BitfusionVersion: 401
+    buildimage: ubuntu:18.04
+    local: bitfusion-client-ubuntu1804_4.0.1-5_amd64.deb
+  - OSVersion: ubuntu20
+    BitfusionVersion: 401
+    buildimage: ubuntu:20.04
+    local: bitfusion-client-ubuntu2004_4.0.1-5_amd64.deb
+  - OSVersion: centos7
+    BitfusionVersion: 401
+    buildimage: centos:7
+    local: bitfusion-client-centos7-4.0.1-5.x86_64.rpm
+  - OSVersion: centos8
+    BitfusionVersion: 401
+    buildimage: centos:8
+    local: bitfusion-client-centos8-4.0.1-5.x86_64.rpm
