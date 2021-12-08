@@ -64,7 +64,7 @@ if not os.path.exists(ckpt_dir):
 global_step = tf.Variable(0, name='global_step', trainable=False)
 saver = tf.train.Saver()
 
-end=100
+end=60
 
 with tf.Session() as sess:
     ckpt = tf.train.get_checkpoint_state(ckpt_dir)
